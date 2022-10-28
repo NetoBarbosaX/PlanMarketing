@@ -1,0 +1,119 @@
+.layout-sidebar {
+	position: fixed;
+	width: 300px;
+	height: calc(100vh - 6rem);
+	z-index: 999;
+	overflow-y: auto;
+	user-select: none;
+	top: 7rem;
+	left: 2rem;
+	transition: transform $transitionDuration, left $transitionDuration;
+	background-color: var(--surface-overlay);
+    padding: 1.5rem;
+    border-right: grey 1px solid;
+}
+
+.layout-menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-image: url("C:/Users/eletr/Desktop/PlanMarketing/public/images/one.png");
+    background-repeat: no-repeat;
+
+    li {
+        &.layout-menuitem-category {
+            margin-top: .75rem;
+
+            &:first-child {
+                margin-top: 0;
+            }
+        }
+        
+        .layout-menuitem-root-text {
+            text-transform: uppercase;
+            color:white;
+            font-weight: 600;
+            margin-bottom: .5rem;
+            font-size: .875rem;
+        }
+
+        a {
+            cursor: pointer;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            color:white;
+            transition: color $transitionDuration;
+            border-radius: $borderRadius;
+            padding: 4.0rem 1rem;
+            transition: background-color .15s;
+            font-size: 1rem;
+
+            span {
+                margin-left: 0.5rem;
+                font-size: 19px;
+            }
+
+            .menuitem-toggle-icon {
+                margin-left: auto;
+            }
+
+            &:focus {
+                @include focused-inset();
+            }
+
+            &:hover {
+                background-color: #495057;
+            }
+
+            &.router-link-exact-active {
+                font-weight: 700;
+                color: red;
+            }
+
+            .p-badge {
+                margin-left: auto;
+            }
+        }
+
+        &.active-menuitem {
+            > a {
+                .menuitem-toggle-icon {
+                    &:before {
+                        content: '\e933';
+                    }
+                }
+            }
+        }
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+
+            &.layout-submenu-wrapper-enter-from,
+            &.layout-submenu-wrapper-leave-to {
+                max-height: 0;
+            }
+
+            &.layout-submenu-wrapper-enter-to,
+            &.layout-submenu-wrapper-leave-from {
+                max-height: 1000px;
+            }
+
+            &.layout-submenu-wrapper-leave-active {
+                overflow: hidden;
+                transition: max-height 0.45s cubic-bezier(0, 1, 0, 1);
+            }
+
+            &.layout-submenu-wrapper-enter-active {
+                overflow: hidden;
+                transition: max-height 1s ease-in-out;
+            }
+
+            ul {
+                padding-left: 1rem;
+            }
+        }
+    }
+}

@@ -1,0 +1,22 @@
+.card {
+    background-color: var(--surface-card);
+    padding: 1.5rem;
+    color: var(--surface-900);
+    margin-bottom: 1rem;
+    border-radius: $borderRadius;
+
+    &.card-w-title {
+        padding-bottom: 2rem;
+    }
+}
+
+.card2 {
+    background-color: #2B2727;
+    padding: 1.5rem;
+    color: var(--surface-900);
+    margin-bottom: 1rem;
+
+    &.card-w-title {
+        padding-bottom: 2rem;
+    }
+}
