@@ -28,3 +28,5 @@ npm run serve
 "npm run serve": Startar a Aplicação
 
 ```
+
+### Certifique a instalação de todas as dependências para evitar erros.
